@@ -1,0 +1,34 @@
+.navbar {
+  width: 100%;
+  background-color: rgb(246, 250, 250);
+  height: 85px;
+}
+
+nav {
+  display: flex;
+  gap: 5rem;
+  align-items: center;
+  padding-top: 20px;
+  width: 100%;
+}
+
+.logo {
+  margin-right: 10%;
+  margin-left: 2%;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+  color: rgb(0, 174, 255);
+}
+
+nav ul {
+  display: flex;
+  gap: 5rem;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
