@@ -1,53 +1,44 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { removeBook } from '../../../redux/books/booksSlice';
 import './books.css';
+
 import AddNewBook from './addNewBook';
 
 const Books = () => {
-  const books = [
-    {
-      genre: 'Action',
-      title: 'The Hunger Games',
-      author: 'Suzanne Collins',
-      chapter: 'Chapter 17',
-      percentage: '64%',
-    },
-    {
-      genre: 'Science Fiction',
-      title: 'Dune',
-      author: 'Frank Herbert',
-      chapter: 'Chapter 3: A lesson Learned',
-      percentage: '8%',
-    },
-    {
-      genre: 'Economy',
-      title: 'Capital in the ',
-      title2: 'Twenty-First Century',
-      author: 'Suzanne Collins',
-      chapter: 'CURRENT CHAPTER',
-      percentage: '0%',
-    },
-  ];
+  const dispatch = useDispatch();
+  const books = useSelector((state) => state.bookstore.books);
 
   return (
-
     <div className="book">
       <div className="book-section">
-
         {books.map((book) => (
-          <div key={book.title} className="book-section-one">
+          <div key={book.item_id} className="book-section-one">
             <div className="action-section">
-              <span>{book.genre}</span>
+              <span>{book.category}</span>
               <div className="book-title">
                 <h2>{book.title}</h2>
                 <h2 className="title2">{book.title2}</h2>
               </div>
               <p>{book.author}</p>
               <div className="book-changes">
-                <button type="button" id="comment">Comment</button>
+                <button type="button" id="comment">
+                  Comment
+                </button>
                 <div className="vh" />
-                <button type="button" id="remove">Remove</button>
+                <button
+                  type="button"
+                  id="remove"
+                  onClick={() => {
+                    dispatch(removeBook(book.item_id));
+                  }}
+                >
+                  Remove
+                </button>
                 <div className="vh" />
-                <button type="button" id="edit">Edit</button>
+                <button type="button" id="edit">
+                  Edit
+                </button>
               </div>
             </div>
             <div className="progress">
@@ -75,7 +66,6 @@ const Books = () => {
               <h4>{book.chapter}</h4>
 
               <button type="button">UPDATE PROGRESS</button>
-
             </div>
           </div>
         ))}
