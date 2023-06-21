@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../../../redux/books/booksSlice';
+import { v4 as uuidv4 } from 'uuid';
+import { addBook, addBookToApi } from '../../../redux/books/booksSlice';
 
 const AddNewBook = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
+  const data = {
+    item_id: uuidv4(),
+    title,
+    author,
+    category: 'Science-fiction',
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!title || !author) return;
-    dispatch(addBook([title, author]));
+    dispatch(addBookToApi(data));
+    dispatch(addBook(data));
     setTitle('');
     setAuthor('');
   };
