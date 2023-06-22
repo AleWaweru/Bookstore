@@ -1,19 +1,27 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { removeBook } from '../../../redux/books/booksSlice';
+import { removeBook, fetchData } from '../../../redux/books/booksSlice';
 import './books.css';
-
 import AddNewBook from './addNewBook';
 
 const Books = () => {
   const dispatch = useDispatch();
-  const books = useSelector((state) => state.bookstore.books);
+  const books = useSelector((state) => state.bookstore);
+
+  useEffect(() => {
+    dispatch(fetchData());
+  }, [dispatch]);
+  const bookLists = books.booklist.map((book, index) => ({
+    ...book,
+    item_id: book.item_id,
+    key: `${book.item_id}-${index}`,
+  }));
 
   return (
     <div className="book">
       <div className="book-section">
-        {books.map((book) => (
-          <div key={book.item_id} className="book-section-one">
+        {bookLists.map((book) => (
+          <div key={book.key} className="book-section-one">
             <div className="action-section">
               <span>{book.category}</span>
               <div className="book-title">
