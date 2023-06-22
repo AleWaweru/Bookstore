@@ -185,3 +185,41 @@
 .addBtn:hover {
   cursor: pointer;
 }
+
+@media screen and (max-width: 768px) {
+  .book-section-one {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .book-title {
+    text-align: center;
+  }
+
+  .book-changes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+
+  .output {
+    text-align: center;
+  }
+
+  .update-progress {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    width: 10px;
+  }
+}
