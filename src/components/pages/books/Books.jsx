@@ -53,17 +53,17 @@ const Books = () => {
               <div
                 className="percentage"
                 style={{
-                  '--clr': 'rgb(59, 59, 245)',
+                  '--clr': '#379cf6',
                   '--num': 65,
                 }}
               >
                 <svg>
-                  <circle cx={70} cy={70} r={70} />
-                  <circle cx={70} cy={70} r={70} />
+                  <circle cx={40} cy={40} r={40} />
+                  <circle cx={40} cy={40} r={40} />
                 </svg>
               </div>
               <div className="output">
-                <h3>{book.percentage}</h3>
+                <h3>64%</h3>
                 <span>Completed</span>
               </div>
             </div>
@@ -71,7 +71,7 @@ const Books = () => {
 
             <div className="update-progress">
               <span>CURRENT CHAPTER</span>
-              <h4>{book.chapter}</h4>
+              <h4>Introduction</h4>
 
               <button type="button">UPDATE PROGRESS</button>
             </div>

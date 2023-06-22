@@ -41,6 +41,8 @@ export const addBook = createAsyncThunk('books/addBook', async ({ title, author 
     title,
     author,
     category: 'Action',
+    percentage: '64%',
+    chapter: 'Introduction',
   };
   return newBook;
 });
