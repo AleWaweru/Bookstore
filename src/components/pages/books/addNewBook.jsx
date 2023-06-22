@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
 import { addBook } from '../../../redux/books/booksSlice';
 
@@ -8,19 +9,30 @@ const AddNewBook = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const data = {
+    const URL_API = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/lBC1u0w8Y5NTm74FEW9B/books/';
+
+    const newBook = {
       item_id: uuidv4(),
       title,
       author,
-      category: 'Science-fiction',
+      category: 'Action',
+      percentage: '64%',
+      chapter: 'Introduction',
     };
 
-    dispatch(addBook(data));
-    setTitle('');
-    setAuthor('');
+    // Add the new book to the store and the API
+    try {
+      await axios.post(URL_API, newBook);
+      dispatch(addBook(newBook));
+      setTitle('');
+      setAuthor('');
+    } catch (error) {
+      // console.error(error);
+      // Handle error adding book
+    }
   };
 
   return (

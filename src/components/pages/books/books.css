@@ -8,7 +8,11 @@
   background-color: #fff;
   height: 150px;
   margin-left: 3%;
-  padding: 20px;
+
+  /* padding: 20px; */
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-left: 10px;
   display: flex;
   border: 1px solid gray;
   margin-bottom: 3rem;
@@ -22,10 +26,35 @@
 }
 
 .action-section p {
-  color: rgb(121, 216, 200);
-  font-size: 15px;
-  margin-top: 10px;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
 }
+
+.book-title h2 {
+  color: #121212;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+}
+
+/* .book-title p{
+  font-family: RobotoSlab;
+  font-size: 0.875rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #4386bf;
+} */
 
 .book-changes {
   margin-top: 30px;
@@ -34,38 +63,48 @@
 
 .book-changes button {
   margin-right: 10px;
-  font-size: 18px;
-  color: rgb(121, 216, 200);
+  font-size: 15px;
+  color: #4386bf;
   border: none;
   background: none;
-  font-weight: normal;
+
+  /* font-weight: normal; */
 }
 
 .update-progress button {
   margin-top: 10px;
-  font-size: 17px;
-  background-color: rgb(25, 173, 192);
+  font-size: 13px;
+  background-color: #0290ff;
   color: white;
   border: none;
   padding: 10px;
   border-radius: 10px;
+  width: 60%;
 }
+
+/*
+.update-progress button{
+  width: 100%;
+
+  font-size: 15px;
+  margin-bottom: 100px;
+
+} */
 
 .book-changes button:hover {
   cursor: pointer;
 }
 
 .vh {
-  border-left: 3px solid rgb(121, 119, 119);
+  border-left: 1px solid rgb(121, 119, 119);
   margin-right: 15px;
 }
 
 .progress {
-  margin-left: 150px;
+  margin-left: 50px;
   display: flex;
   align-items: center;
-  margin-right: 40px;
-  gap: 15px;
+  margin-right: 30px;
 }
 
 .progress .percentage {
@@ -73,6 +112,7 @@
   width: 150px;
   height: 150px;
   transform: rotate(270deg);
+  margin-bottom: 40px;
 }
 
 .progress .percentage svg {
@@ -85,7 +125,7 @@
   width: 100%;
   height: 100%;
   fill: transparent;
-  stroke-width: 7;
+  stroke-width: 6;
   stroke: #bbb9b9;
   transform: translate(5px, 5px);
 }
@@ -93,7 +133,7 @@
 .progress .percentage svg circle:nth-child(2) {
   stroke: var(--clr);
   stroke-dasharray: 350;
-  stroke-dashoffset: 0;
+  stroke-dashoffset: 150;
 }
 
 .output h3 {
@@ -106,15 +146,17 @@
 }
 
 .vh2 {
-  border-left: 2px solid rgb(121, 119, 119);
+  border-left: 2px solid rgb(196, 194, 194);
   margin-left: 45px;
-  height: 100px;
-  margin-top: 45px;
+  height: 70px;
+  margin-top: 20px;
 }
 
 .update-progress {
-  margin-left: 50px;
+  width: 100%;
+  margin-left: 10%;
   gap: 10px;
+  padding-bottom: 10px;
 }
 
 .update-progress span {
@@ -126,7 +168,12 @@
   margin-top: 15px;
   margin-bottom: 15px;
   font-size: 18px;
-  color: #5e5c5c;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #121212;
 }
 
 .update-progress button:hover {
@@ -137,8 +184,8 @@
   border-top: 2px solid grey;
   margin-top: 10px;
   margin-bottom: 20px;
-  width: 94%;
-  margin-left: 3%;
+  width: 85%;
+  margin-left: 5%;
 }
 
 .addBook-container h2 {
@@ -176,10 +223,11 @@
   width: 13%;
   padding: 10px;
   border-radius: 5px;
-  background-color: rgb(25, 173, 192);
+  background-color: #0290ff;
   color: #fff;
   border: none;
   height: 40px;
+  margin-left: 40px;
 }
 
 .addBtn:hover {
@@ -187,39 +235,13 @@
 }
 
 @media screen and (max-width: 768px) {
-  .book-section-one {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .book-title {
-    text-align: center;
-  }
-
-  .book-changes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-  }
-
-  .progress {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-  }
-
-  .output {
-    text-align: center;
-  }
-
-  .update-progress {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20px;
-    width: 10px;
+  .update-progress button {
+    margin-top: 10px;
+    font-size: 15px;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    width: 80%;
   }
 }

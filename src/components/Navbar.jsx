@@ -10,15 +10,15 @@ const Navbar = () => (
       <Link className="logo" to="/">Bookstore CMS</Link>
 
       <ul>
-        <li>
+        <li className="book-nav">
           <Link to="/">Books</Link>
         </li>
-        <li>
+        <li className="categories-nav">
           <Link to="/categories">Categories</Link>
         </li>
       </ul>
       <button type="button" className="login">
-        {/* {' '} */}
+
         <FontAwesomeIcon icon={faUser} />
       </button>
     </nav>
